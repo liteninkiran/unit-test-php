@@ -4,8 +4,9 @@
 
     class User
     {
-        protected $first_name;
-        protected $last_name;
+        public $first_name;
+        public $last_name;
+        public $email;
 
         public function setFirstName($firstName)
         {
@@ -30,6 +31,27 @@
         public function getFullName()
         {
             return $this->first_name . ' ' . $this->last_name;
+        }
+
+        public function setEmail($email)
+        {
+            $this->email = trim($email);
+        }
+
+        public function getEmail()
+        {
+            return $this->email;
+        }
+
+        public function getEmailVariables()
+        {
+            $data =
+            [
+                'full_name' => $this->getFullName(),
+                'email' => $this->getEmail()
+            ];
+
+            return $data;
         }
     }
 
