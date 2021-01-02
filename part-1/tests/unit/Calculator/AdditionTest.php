@@ -17,7 +17,6 @@
             $addition = new \App\Calculator\Addition;
             $addition->calculate();
         }
-
     }
 
 ?>
